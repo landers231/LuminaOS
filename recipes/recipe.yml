@@ -5,15 +5,12 @@ image-version: latest
 
 modules:
   - type: rpm-ostree
-    repos:
-      - https://copr.fedorainfracloud.org/coprs/varlad/ollama/repo/fedora-40/varlad-ollama-fedora-40.repo
     install:
       - tlp
       - tlp-rdw
       - qemu-kvm
       - libvirt
       - freerdp
-      - ollama
       - intel-compute-runtime
       - rocm-opencl
 
@@ -32,4 +29,3 @@ modules:
     system:
       enabled:
         - tlp.service
-        - ollama.service
