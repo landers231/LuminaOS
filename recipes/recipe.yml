@@ -6,8 +6,6 @@ image-version: latest
 modules:
   - type: rpm-ostree
     install:
-      - tlp
-      - tlp-rdw
       - qemu-kvm
       - libvirt
       - freerdp
@@ -24,8 +22,3 @@ modules:
         - org.onlyoffice.desktopeditors
         - com.spotify.Client
         - com.discordapp.Discord
-
-  - type: systemd
-    system:
-      enabled:
-        - tlp.service
