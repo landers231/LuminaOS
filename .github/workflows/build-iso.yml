@@ -11,7 +11,19 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
-      - name: Build ISO
-        uses: blue-build/github-action/build-iso@v1.11
+        
+      - name: Build Installer ISO
+        uses: jasonn3/build-container-installer@v1.2.2
         with:
+          arch: x86_64
           image_name: luminaos
+          image_repo: ghcr.io/landers231
+          image_tag: latest
+          version: 40
+          iso_name: luminaos.iso
+
+      - name: Upload ISO as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: luminaos-iso
+          path: ./*.iso
