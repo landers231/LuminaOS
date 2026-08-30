@@ -1,0 +1,17 @@
+name: Build ISO
+on:
+  workflow_dispatch:
+jobs:
+  build-iso:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v4
+      - name: Build ISO
+        uses: blue-build/github-action/build-iso@v1.11
+        with:
+          image_name: luminaos
