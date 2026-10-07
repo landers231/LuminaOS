@@ -23,7 +23,7 @@ jobs:
           iso_name: luminaos.iso
 
       - name: Upload ISO as Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: luminaos-iso
           path: ./*.iso
